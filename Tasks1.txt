@@ -1,0 +1,37 @@
+
+===========================================================
+
+Find the number of movies released between 1945 and 1959
+select count(name) from movie where year>=1945 and year<=1959 ;
+470
+select count(dinstinct(name)) from movie where year>=1945 and year<=1959 ;
+468
+===========================================================
+
+Find the number of movies having rating more than 3.9
+select count(name) from movie where rating>3.9; 
+1477
+select count(distinct(name)) from movie where rating>3.9; 
+1393
+
+
+===========================================================
+
+Find the number of movies with duration more than 1.5 hours
+select count(name) from movie where duration>(1.5*60*60); 
+4452
+select count(distinct(name)) from movie where duration>(1.5*60*60);
+4421
+===========================================================
+
+Find the list of years and number of movies released each year
+select year,count(name) from movie group by year;
+
+===========================================================
+
+Count the total number of movies in the list 
+
+ select count(distinct(name)) from movie ;
+
+49143
+===========================================================
